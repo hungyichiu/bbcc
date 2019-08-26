@@ -1,0 +1,29 @@
+<h1>Edit Candidate</h1>
+
+<% if @candidate.errors.any? %>
+  <ul>
+    <% @candidate.errors.full_messages.each do |message|%>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @candidate do |f| %>
+  <div>
+    <%= f.label :name, "name: "%>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :party, "party: "%>
+    <%= f.text_field :party %>
+  </div>
+  <div>
+    <%= f.label :age, "age: "%>
+    <%= f.text_field :age %>
+  </div>
+  <div>
+    <%= f.label :policy, "policy: "%>
+    <%= f.text_field :policy %>
+  </div>
+    <%= f.submit%>
+<% end %>
